@@ -11,8 +11,8 @@ gamesDict = {
         "link" : "ApexLegends",
         "description" : "Apex Legends, released on February 4, 2019, garnered immense popularity, reaching 25 million players within its first week and an impressive 50 million players within the initial month. Subsequently, its player base has continued to grow, making it one of the widely played battle royale games. For the latest and most accurate information, it is advisable to check the official Apex Legends website or reliable gaming industry sources, as specific statistics about the current player base may not be publicly disclosed by the developers."
     },
-    "Call of Duty War zone 2" : {
-        "link" : "jaws",
+    "Call of Duty Warzone" : {
+        "link" : "CallofDutyWarzone2",
         "description" : "As of my last knowledge update in January 2022, there hasn't been an official announcement or release of Warzone 2. Plans for sequels and new versions of popular games can be dynamic and subject to change. For the latest and most accurate information, I recommend checking the official channels of the game developers, such as Infinity Ward or Activision, and reputable gaming news sources for any recent updates or announcements regarding a potential Warzone 2."
     },
     "Counter Strike GO" : {
@@ -183,6 +183,7 @@ def movie_reviews(movie_title):
     print(movie_title)
     # Fetch reviews for the specified movie from the database
     reviews = get_reviews_by_movie(movie_title)
+    reviews = [review[0] for review in reviews]
     print("name")
     print(movie_title)
     info = gamesDict[movie_title]

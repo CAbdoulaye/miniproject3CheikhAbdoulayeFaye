@@ -3,25 +3,33 @@
 {% block title %}{{ arr[0] }} Reviews{% endblock %}
 
 {% block content %}
-    <h2>{{ arr[0] }} Reviews</h2>
-    <img src="{{ url_for('static', filename='images/' + arr[1] +'.jpg') }}" alt="loading">
-    <h4>{{arr[2]}}</h4>
-    {% if arr[3] %}
-        <ul>
-            {% for review in arr[3] %}
-                <li>{{ review }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No reviews available for {{ arr[0] }}</p>
-    {% endif %}
-    {% if 'user_id' in request.cookies %}
-        <button type="button" class="btn btn-info" onclick="window.location.href='/add_review/{{arr[0]}}'">Add Review</button>
-    {% else %}
-        <p>Login to add your review.</p>
-    {% endif %}
+    <div class="container mt-4">
+        <h2>{{ arr[0] }} Reviews</h2>
 
-    <!-- Add a link back to the list of movies -->
-    <p><a href="{{ url_for('movie_list') }}">Back to Movie List</a></p>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='IMAGES/' + arr[1] +'.png') }}" alt="{{ arr[0] }} Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h4>{{ arr[2] }}</h4>
+                {% if arr[3] %}
+                    <ul class="list-group">
+                        {% for review in arr[3] %}
+                            <li class="list-group-item">{{ review }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No reviews available for {{ arr[0] }}</p>
+                {% endif %}
+                {% if 'user_id' in request.cookies %}
+                    <button type="button" class="btn btn-info mt-3" onclick="window.location.href='/add_review/{{arr[0]}}'">Add Review</button>
+                {% else %}
+                    <p class="mt-3">Login to add a review.</p>
+                {% endif %}
+            </div>
+        </div>
 
+        <!-- Add a link back to the list of games -->
+        <p class="mt-3"><a href="{{ url_for('games') }}" class="btn btn-secondary">Back to Games</a></p>
+    </div>
 {% endblock %}

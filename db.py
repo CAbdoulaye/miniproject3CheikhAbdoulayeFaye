@@ -1,8 +1,7 @@
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 
-DATABASE_FILE = 'test.db'
-
+DATABASE_FILE = 'gamers.db'
 
 def create_tables():
     conn = sqlite3.connect(DATABASE_FILE)
@@ -27,6 +26,7 @@ def create_tables():
 
     conn.commit()
     conn.close()
+    print("Tables created.")
 
 def register_user(username, email, password, confirm_password):
     conn = sqlite3.connect(DATABASE_FILE)
