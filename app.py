@@ -6,50 +6,42 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 
 
-moviesDict = {
-    "Titanic" : {
-        "link" : "titanic",
-        "description" : "The RMS Titanic, a British passenger liner, met a tragic fate on April 15, 1912. During its maiden voyage from Southampton to New York, the ship struck an iceberg in the North Atlantic Ocean and sank. The disaster resulted in the loss of over 1,500 lives. Despite being equipped with advanced safety features for its time, inadequate lifeboat capacity and a lack of efficient communication contributed to the high casualty toll. The sinking of the Titanic remains one of the most infamous maritime disasters in history, prompting improvements in maritime safety regulations and capturing the public's imagination for decades to come."
+gamesDict = {
+    "Apex Legends" : {
+        "link" : "ApexLegends",
+        "description" : "Apex Legends, released on February 4, 2019, garnered immense popularity, reaching 25 million players within its first week and an impressive 50 million players within the initial month. Subsequently, its player base has continued to grow, making it one of the widely played battle royale games. For the latest and most accurate information, it is advisable to check the official Apex Legends website or reliable gaming industry sources, as specific statistics about the current player base may not be publicly disclosed by the developers."
     },
-    "Jaws" : {
+    "Call of Duty War zone 2" : {
         "link" : "jaws",
-        "description" : "Jaws is a 1975 thriller film directed by Steven Spielberg. Based on Peter Benchley's novel, it follows Police Chief Martin Brody (Roy Scheider), marine biologist Matt Hooper (Richard Dreyfuss), and shark hunter Quint (Robert Shaw) as they attempt to hunt down a great white shark that is terrorizing the fictional resort town of Amity Island. The film became a blockbuster and is known for its suspenseful atmosphere and the iconic music score composed by John Williams. Jaws not only defined the summer blockbuster but also instilled a fear of sharks in popular culture, leaving a lasting impact on cinema."
+        "description" : "As of my last knowledge update in January 2022, there hasn't been an official announcement or release of Warzone 2. Plans for sequels and new versions of popular games can be dynamic and subject to change. For the latest and most accurate information, I recommend checking the official channels of the game developers, such as Infinity Ward or Activision, and reputable gaming news sources for any recent updates or announcements regarding a potential Warzone 2."
     },
-    "Avatar" : {
-        "link" : "avatar",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    "Counter Strike GO" : {
+        "link" : "CounterStrikeGO",
+        "description" : "Counter-Strike: Global Offensive (CS:GO) is a popular multiplayer first-person shooter developed by Valve and Hidden Path Entertainment. Released in 2012, it is the fourth game in the Counter-Strike series. CS:GO features classic team-based gameplay, iconic maps, and a competitive scene. It has remained a prominent title in the esports community, attracting millions of players worldwide."
     },
-    "Avengers" : {
-        "link" : "avengers",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    "Fortnite" : {
+        "link" : "Fortnite",
+        "description" : "Fortnite, developed by Epic Games, is a widely popular battle royale game that took the gaming world by storm upon its release in 2017. Known for its vibrant graphics, unique building mechanics, and frequent updates, Fortnite has amassed a massive player base. The game's cross-platform availability and regular events contribute to its cultural impact and sustained popularity in the gaming community."
     },
-    "Home Alone" : {
-        "link" : "homeAlone",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    "Genshin Impact" : {
+        "link" : "GenshinImpact",
+        "description" : "Genshin Impact, an action role-playing game by miHoYo, has gained immense popularity since its release in 2020. Set in the fantasy world of Teyvat, players explore diverse landscapes, solve puzzles, and engage in real-time combat. Notable for its stunning anime-inspired visuals, extensive character roster, and a free-to-play model, Genshin Impact has become a global sensation, appealing to both fans of single-player and multiplayer experiences."
     },
-    "Jurassic Park" : {
-        "link" : "jurassicPark",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    "League of Legends" : {
+        "link" : "LeagueofLegends",
+        "description" : "League of Legends (LoL), developed by Riot Games, is a highly popular multiplayer online battle arena (MOBA) game. Launched in 2009, it has become a global esports phenomenon. Players, known as summoners, choose unique champions and engage in strategic team-based battles. Regular updates, a competitive scene, and a massive player community contribute to its enduring success."
     },
-    "Lion King" : {
-        "link" : "lionKing",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    "Minecraft" : {
+        "link" : "Minecraft",
+        "description" : "Minecraft, created by Mojang Studios, is a sandbox game that allows players to explore a blocky, procedurally generated world with infinite terrain. It has various gameplay modes, including survival mode where players gather resources and maintain health, and creative mode where unlimited resources and flight are available. Minecraft's open-ended nature and extensive modding community contribute to its enduring popularity since its initial release in 2011."
     },
-    "Shrek" : {
-        "link" : "shrek",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    "PUBG Battleground" : {
+        "link" : "PUBGBattleground",
+        "description" : "PlayerUnknown's Battlegrounds (PUBG) is a battle royale game developed and published by PUBG Corporation. Released in 2017, PUBG gained immense popularity for its intense multiplayer gameplay. In the game, 100 players parachute onto an island, scavenge for weapons, and strive to be the last person or team standing as the play area shrinks. PUBG significantly influenced the battle royale genre and remains a widely played and enjoyed game globally."
     },
-    "Star Wars" : {
-        "link" : "starWars",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
-    },
-    "The Dark Knight" : {
-        "link" : "theDarkKnight",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
-    },
-    "Jurassic World" : {
-        "link" : "jurassicWorld",
-        "description" : "Avatar is a 2009 science fiction film directed by James Cameron. Set in the mid-22nd century on the fictional moon Pandora, the story follows Jake Sully (played by Sam Worthington), a paralyzed former Marine who becomes an Avatar operator. Avatars are genetically engineered human-Na'vi hybrids used to interact with the indigenous Na'vi people on Pandora. As Jake infiltrates the Na'vi community, he finds himself torn between loyalty to humanity and empathy for the Na'vi. The film is known for its groundbreaking visual effects, 3D technology, and immersive world-building. Avatar became the highest-grossing film of all time until it was surpassed by Avengers: Endgame in 2019."
+    "Valorant" : {
+        "link" : "Valorant",
+        "description" : "Valorant is a tactical first-person shooter (FPS) game developed and published by Riot Games. Launched in 2020, Valorant combines precise gunplay with unique agent abilities, introducing a strategic layer to traditional FPS gameplay. The game features a variety of agents, each with distinct abilities, adding depth to team-based engagements. Valorant has gained a large player base and is known for its competitive scene and regular updates, keeping the gameplay experience fresh and engaging."
     }
 }
 
@@ -88,11 +80,7 @@ def validate_review_form(movie_title, review_text):
 
     return True
 
-# ... (your other code)
 
-
-# Routes for user authentication
-# Routes for user authentication
 # Routes for user authentication
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -146,7 +134,6 @@ def login():
 
 
 # Route for adding reviews
-# Route for adding reviews
 @app.route('/add_review/<movie_title>', methods=['GET', 'POST'])
 def add_review_route(movie_title):
     if 'user_id' not in request.cookies:
@@ -191,16 +178,21 @@ def games():
 
 
 # Route for displaying reviews for a specific movie
-@app.route('/games/<game_title>')
-def movie_reviews(game_title):
-    settings = get_reviews_by_movie(game_title)
+@app.route('/game/<movie_title>')
+def movie_reviews(movie_title):
+    print(movie_title)
+    # Fetch reviews for the specified movie from the database
+    reviews = get_reviews_by_movie(movie_title)
     print("name")
-    print(game_title)
-    info = moviesDict[game_title]
-    settings = game_title
-    image_link = game_title.replace(" ", "")
-    arr = [game_title, image_link, settings]
-    return render_template('game.html', arr=arr)
+    print(movie_title)
+    info = gamesDict[movie_title]
+    image_link = info["link"]
+    print(image_link)
+    movie_description = info["description"]
+    arr = [movie_title, image_link, movie_description, reviews]
+    return render_template('movie_reviews.html', arr=arr)
+
+
 
 if __name__ == '__main__':
     create_tables()  # Ensure that the database tables are created before running the app

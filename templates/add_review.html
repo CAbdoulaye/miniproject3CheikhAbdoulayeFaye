@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Review{% endblock %}
+
+{% block content %}
+    <div class="row mt-3">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">Add Review</h1>
+            <form method="post" action="{{ url_for('add_review_route', movie_title=movie_title) }}">
+                <input type="hidden" name="movie_title" value="{{ movie_title }}">
+                <div class="form-group">
+                    <label for="review_text">Your Review:</label>
+                    <textarea class="form-control" name="review_text" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

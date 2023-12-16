@@ -1,7 +1,8 @@
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 
-DATABASE_FILE = 'users.db'
+DATABASE_FILE = 'test.db'
+
 
 def create_tables():
     conn = sqlite3.connect(DATABASE_FILE)

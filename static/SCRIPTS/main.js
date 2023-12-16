@@ -1,14 +1,15 @@
-const myButton = document.querySelectorAll(".moviePageButton");
+const myButton = document.querySelectorAll(".btn-success");
     console.log("name")
 
 myButton.forEach(function(button){
   button.addEventListener("click", function(){
-    sendMovieNameToFlask(this)
+    sendGameNameToFlask(this)
   });
 })
 
-function sendMovieNameToFlask(clickedMovieButton){
+function sendGameNameToFlask(clickedMovieButton){
     let name = clickedMovieButton.previousElementSibling.innerHTML;
     console.log(name)
-    window.location.href = `/games/${name}`;
+    console.log(name)
+    window.location.href = `/game/${name}`;
 }

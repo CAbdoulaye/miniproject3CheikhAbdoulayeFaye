@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ arr[0] }} Reviews{% endblock %}
+
+{% block content %}
+    <h2>{{ arr[0] }} Reviews</h2>
+    <img src="{{ url_for('static', filename='images/' + arr[1] +'.jpg') }}" alt="loading">
+    <h4>{{arr[2]}}</h4>
+    {% if arr[3] %}
+        <ul>
+            {% for review in arr[3] %}
+                <li>{{ review }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews available for {{ arr[0] }}</p>
+    {% endif %}
+    {% if 'user_id' in request.cookies %}
+        <button type="button" class="btn btn-info" onclick="window.location.href='/add_review/{{arr[0]}}'">Add Review</button>
+    {% else %}
+        <p>Login to add your review.</p>
+    {% endif %}
+
+    <!-- Add a link back to the list of movies -->
+    <p><a href="{{ url_for('movie_list') }}">Back to Movie List</a></p>
+
+{% endblock %}

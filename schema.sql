@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS reviews (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER,
-    movie_title TEXT NOT NULL,
+    game_title TEXT NOT NULL,
     review_text TEXT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
