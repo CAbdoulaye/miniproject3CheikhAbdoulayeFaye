@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Top 10 Video Games{% endblock %}
+
+{% block header %}Top 10 Video Games{% endblock %}
+
+{% block content %}
+    <h2>List of Top 10 Video Games</h2>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/ApexLegends.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>Apex Legends</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/CallofDutyWarzone2.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>Call of Duty Warzone 2</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/CounterStrikeGO.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>Counter Strike GO</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/Fortnite.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>Fortnite</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/GenshinImpact.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>Genshin Impact</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/LeagueofLegends.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>League of Legends</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/Minecraft.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>Minecraft</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/PUBGBattleground.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>PUBG Battleground</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+
+    <div class="game">
+        <img src="{{ url_for('static', filename='IMAGES/Valorant.png') }}" class="img-fluid" alt="Graphics for Gaming">
+        <p>Valorant</p>
+        <button type="button" class="btn btn-success">Best Settings and graphics</button>
+    </div>
+{% endblock %}

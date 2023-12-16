@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Gaming Setup{% endblock %}
+
+{% block content %}
+    <div class="jumbotron mt-3">
+        <h1 class="display-4">Welcome to the Ultimate Gaming Experience!</h1>
+        <p class="lead">Explore the best gaming setups and graphics for an immersive gaming experience.</p>
+        <hr class="my-4">
+        <p>Discover tips, recommendations, and the latest trends to enhance your gaming environment.</p>
+        <a class="btn btn-primary btn-lg" href="#gaming-setup" role="button">Explore Gaming Setup</a>
+    </div>
+
+    <section id="gaming-setup" class="mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Best Gaming Setup</h2>
+                <p>Creating the perfect gaming setup involves a combination of hardware, accessories, and aesthetics. Here are some key elements:</p>
+                <ul>
+                    <li><strong>Gaming PC:</strong> Invest in a powerful gaming PC with a high-performance CPU and GPU for smooth gaming.</li>
+                    <li><strong>Monitor:</strong> Choose a high-refresh-rate monitor with low response time for minimal input lag.</li>
+                    <li><strong>Keyboard and Mouse:</strong> Opt for gaming peripherals with customizable keys and precise sensors.</li>
+                    <li><strong>Comfortable Chair:</strong> Long gaming sessions require a comfortable and ergonomic gaming chair.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='IMAGES/gamingHomepage.webp') }}" class="img-fluid" alt="Gaming Setup">
+            </div>
+        </div>
+    </section>
+
+    <section id="graphics-for-gaming" class="mt-4">
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <img src="{{ url_for('static', filename='IMAGES/gamingHomepage2.webp') }}" class="img-fluid" alt="Graphics for Gaming">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h2>High-Quality Graphics for Gaming</h2>
+                <p>Graphics play a crucial role in the gaming experience. Achieve stunning visuals with these tips:</p>
+                <ul>
+                    <li><strong>Graphics Card:</strong> Invest in a powerful GPU for realistic and smooth graphics rendering.</li>
+                    <li><strong>Optimal Settings:</strong> Adjust in-game graphics settings for a balance between performance and visuals.</li>
+                    <li><strong>High-Resolution Display:</strong> Choose a monitor with a high resolution for crisp and detailed graphics.</li>
+                    <li><strong>Latest Drivers:</strong> Keep your graphics drivers up to date for optimal performance and compatibility.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
