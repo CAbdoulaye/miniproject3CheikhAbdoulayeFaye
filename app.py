@@ -14,7 +14,7 @@ gamesDict = {
         "link" : "CallofDutyWarzone2",
         "description" : "As of my last knowledge update in January 2022, there hasn't been an official announcement or release of Warzone 2. Plans for sequels and new versions of popular games can be dynamic and subject to change. For the latest and most accurate information, I recommend checking the official channels of the game developers, such as Infinity Ward or Activision, and reputable gaming news sources for any recent updates or announcements regarding a potential Warzone 2."
     },
-    "Counter Strike GO" : {
+    "Counter Strike GO":{
         "link" : "CounterStrikeGO",
         "description" : "Counter-Strike: Global Offensive (CS:GO) is a popular multiplayer first-person shooter developed by Valve and Hidden Path Entertainment. Released in 2012, it is the fourth game in the Counter-Strike series. CS:GO features classic team-based gameplay, iconic maps, and a competitive scene. It has remained a prominent title in the esports community, attracting millions of players worldwide."
     },
